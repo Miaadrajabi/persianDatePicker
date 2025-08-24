@@ -73,6 +73,8 @@ val config = PersianDatePickerBuilder()
       // day text colors
       dayDefaultTextColor = Color(0xFF333333),
       dayTodayTextColor = Color(0xFF2196F3),
+      // more: navPrevIconColor/navNextIconColor, dialogTitleTextColor, bottomSheetTitleTextColor,
+      //       selectionFooterBackgroundColor/textColor, sizes (dayCellSize/buttonHeight/gridHeight), etc.
     )
   )
   .showTodayButton(true)
@@ -104,7 +106,7 @@ PersianDatePicker(
 - Library handles Jalali leap years internally for month/day calculations.
 - You can also query leap years directly:
 ```kotlin
-val isLeap = com.miaadrajabi.persiandatepicker.utils.PersianDate.isLeapYear(1404)
+val isLeap = PersianDate.isLeapYear(1404)
 ```
 
 ## License
