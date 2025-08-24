@@ -221,29 +221,6 @@ fun PersianDatePickerDemo() {
                         fontFamily = PersianFonts.Regular
                     )
                 }
-                
-                // Java Test Button
-                Button(
-                    onClick = { 
-                        val intent = Intent(context, JavaDatePickerActivity::class.java)
-                        context.startActivity(intent)
-                    },
-                    colors = ButtonDefaults.buttonColors(
-                        containerColor = Color(0xFFFF9800)
-                    ),
-                    shape = RoundedCornerShape(12.dp),
-                    modifier = Modifier
-                        .weight(1f)
-                        .height(56.dp)
-                ) {
-                    Text(
-                        text = "Java Test",
-                        fontSize = 12.sp,
-                        fontWeight = FontWeight.SemiBold,
-                        color = Color.White,
-                        fontFamily = PersianFonts.Regular
-                    )
-                }
             }
             
             Spacer(modifier = Modifier.height(32.dp))
