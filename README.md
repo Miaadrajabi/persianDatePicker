@@ -11,15 +11,14 @@ A clean, highly configurable Persian (Jalali) Date Picker for Android built with
 - Year Picker with configurable grid/appearance
 
 ## Gradle (JitPack)
-Add JitPack to your root `settings.gradle` (Kotlin DSL):
+Add JitPack repository (Kotlin DSL):
 ```kotlin
-dependencyResolutionManagement {
-  repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-  repositories {
+repositories {
     google()
     mavenCentral()
-    maven(url = "https://jitpack.io")
-  }
+    maven {
+        url = uri("https://jitpack.io")
+    }
 }
 ```
 Add dependency (Groovy DSL):
@@ -84,6 +83,7 @@ val config = PersianDatePickerBuilder()
   .rangeTitle("انتخاب بازه تاریخ")
   .enableYearPicker(true)
   .showSelectionSummaryFooter(true)
+  // more: dialog/bottomSheet title colors, nav icon colors, scrim, footer styles, day sizes, etc.
   .build()
 
 PersianDatePicker(
@@ -98,6 +98,13 @@ PersianDatePicker(
     }
   }
 )
+```
+
+## Leap Year Support (سال کبیسه)
+- Library handles Jalali leap years internally for month/day calculations.
+- You can also query leap years directly:
+```kotlin
+val isLeap = com.miaadrajabi.persiandatepicker.utils.PersianDate.isLeapYear(1404)
 ```
 
 ## License
