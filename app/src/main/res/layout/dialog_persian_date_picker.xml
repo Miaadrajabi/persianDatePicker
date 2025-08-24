@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:orientation="vertical">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/tv_header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="انتخاب بازه تاریخ"
+            android:textColor="#333333"
+            android:textDirection="rtl"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_close"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/close_button_background"
+            android:text="×"
+            android:textColor="#666666"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Month Navigation -->
+    <LinearLayout
+        android:id="@+id/layout_month_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="24dp">
+
+        <Button
+            android:id="@+id/btn_prev_month"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@drawable/nav_button_background"
+            android:text="❮"
+            android:textColor="#2196F3"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_month_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="فروردین"
+                android:textColor="#333333"
+                android:textDirection="rtl"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/year_button_background"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="12dp"
+                android:text="۱۴۰۳"
+                android:textColor="#2196F3"
+                android:textDirection="rtl"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_next_month"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@drawable/nav_button_background"
+            android:text="❯"
+            android:textColor="#2196F3"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Year Picker (Hidden by default) -->
+    <LinearLayout
+        android:id="@+id/layout_year_picker"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@drawable/dialog_background"
+        android:orientation="vertical"
+        android:padding="4dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:text="انتخاب سال"
+            android:textColor="#333333"
+            android:textDirection="rtl"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ScrollView
+            android:id="@+id/scroll_year_picker"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/layout_year_grid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical" />
+        </ScrollView>
+    </LinearLayout>
+
+    <!-- Calendar Container -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical">
+
+        <!-- Days of Week Header -->
+        <LinearLayout
+            android:id="@+id/layout_weekdays_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:layoutDirection="rtl"
+            android:orientation="horizontal">
+            <!-- Weekdays will be added programmatically -->
+        </LinearLayout>
+
+        <!-- Calendar Grid -->
+        <GridLayout
+            android:id="@+id/grid_calendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alignmentMode="alignBounds"
+            android:columnCount="7"
+            android:columnOrderPreserved="false"
+            android:layoutDirection="rtl"
+            android:useDefaultMargins="false" />
+
+    </LinearLayout>
+
+    <!-- Selected Range Display -->
+    <LinearLayout
+        android:id="@+id/card_selected_range"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/dialog_background"
+        android:backgroundTint="#1A2196F3"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:text="بازه انتخاب شده"
+                android:textColor="#2196F3"
+                android:textDirection="rtl"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_selected_range"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text=""
+                android:textColor="#333333"
+                android:textDirection="rtl"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Action Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/btn_today"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/today_button_background"
+            android:text="امروز"
+            android:textColor="#FFFFFF"
+            android:textDirection="rtl"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/cancel_button_background"
+            android:text="لغو"
+            android:textColor="#FFFFFF"
+            android:textDirection="rtl"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_confirm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/confirm_button_background"
+            android:enabled="false"
+            android:text="تأیید"
+            android:textColor="#FFFFFF"
+            android:textDirection="rtl"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</LinearLayout> 

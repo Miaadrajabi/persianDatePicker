@@ -1,0 +1,17 @@
+# Android
+*.iml
+.gradle/
+/local.properties
+/.idea/
+.DS_Store
+/build/
+/captures/
+.externalNativeBuild/
+.cxx/
+# App/build and Library/build
+app/build/
+persiandatepicker/build/
+# Gradle
+**/build/
+# Logs
+*.log
