@@ -135,7 +135,7 @@ PersianDatePicker(
 - How do I enable the Year Picker?
   - `.enableYearPicker(true)` and customize via `PersianDatePickerStyle` (columns, colors, radius).
 - What is the minimum SDK?
-  - minSdk 24.
+  - minSdk 21.
 
 ## Leap Year (سال کبیسه)
 Handled internally for Jalali. You can also query:
