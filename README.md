@@ -26,7 +26,7 @@ dependencyResolutionManagement {
 2. Add dependency:
 ```kotlin
 dependencies {
-  implementation("com.github.<YOUR_GITHUB_USERNAME>:persianDatePicker:<version>")
+  implementation("com.github.<YOUR_GITHUB_USERNAME>:persianDatePicker:v1.0.0")
 }
 ```
 
