@@ -1,6 +1,6 @@
 # Android Persian (Jalali) DatePicker for Jetpack Compose
 
-[![JitPack](https://jitpack.io/v/Miaadrajabi/persianDatePicker.svg)](https://jitpack.io/#Miaadrajabi/persianDatePicker) [![minSdk](https://img.shields.io/badge/minSdk-24-brightgreen.svg)](https://developer.android.com) [![Kotlin](https://img.shields.io/badge/Kotlin-2.0.0-7f52ff.svg)](https://kotlinlang.org) [![Compose](https://img.shields.io/badge/Jetpack%20Compose-Material3-blue.svg)](https://developer.android.com/jetpack/compose) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![JitPack](https://jitpack.io/v/Miaadrajabi/persianDatePicker.svg)](https://jitpack.io/#Miaadrajabi/persianDatePicker) [![minSdk](https://img.shields.io/badge/minSdk-21-brightgreen.svg)](https://developer.android.com) [![Kotlin](https://img.shields.io/badge/Kotlin-2.0.0-7f52ff.svg)](https://kotlinlang.org) [![Compose](https://img.shields.io/badge/Jetpack%20Compose-Material3-blue.svg)](https://developer.android.com/jetpack/compose) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 Clean, configurable Persian (Jalali/Iranian) Date Picker for Android with Jetpack Compose. Supports Single, Multiple, and Range selection in Dialog and Bottom Sheet, RTL-friendly, with full styling and an optional Year Picker.
 
