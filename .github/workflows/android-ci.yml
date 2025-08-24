@@ -1,0 +1,39 @@
+name: Android CI
+
+on:
+  push:
+    branches: [ main ]
+    tags: [ 'v*' ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: 'gradle'
+
+      - name: Gradle Wrapper Validation
+        uses: gradle/wrapper-validation-action@v2
+
+      - name: Build library (Release)
+        run: ./gradlew :persiandatepicker:assembleRelease --no-daemon
+
+      - name: Publish to Maven Local (for verification)
+        run: ./gradlew :persiandatepicker:publishToMavenLocal --no-daemon -PVERSION=${{ github.ref_name }}
+
+      - name: Upload AAR artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: persiandatepicker-aar
+          path: persiandatepicker/build/outputs/aar/*.aar
+
+
