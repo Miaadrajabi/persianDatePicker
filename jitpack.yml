@@ -1,0 +1,8 @@
+jdk:
+  - openjdk17
+
+install:
+  - ./gradlew clean --no-daemon
+  - ./gradlew -Pgroup=com.github.Miaadrajabi -Pversion=${VERSION} :persiandatepicker:publishToMavenLocal -x lint -x test --no-daemon
+
+
