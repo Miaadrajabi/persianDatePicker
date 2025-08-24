@@ -785,7 +785,7 @@ private fun PersianDatePickerCard(
                 val confirmEnabled = when (config.selectionMode) {
                     SelectionMode.SINGLE -> singleDate != null
                     SelectionMode.MULTIPLE -> selectedDates.isNotEmpty()
-                    SelectionMode.RANGE -> dateRange.startDate != null
+                    SelectionMode.RANGE -> dateRange.startDate != null && dateRange.endDate != null
                 }
 
                 Button(
